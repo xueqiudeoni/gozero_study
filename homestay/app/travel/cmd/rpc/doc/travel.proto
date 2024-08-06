@@ -1,0 +1,32 @@
+syntax = "proto3";
+option go_package="./doc/pb";
+package pb;
+
+
+message Homestay{
+  int64 id=1;
+  string title=2;
+  string subTitle=3;
+  string banner=4;
+  string info=5;
+  int64 peopleNum=6;  //容纳人的数量
+  int64 homestayBusinessId=7; //店铺id
+  int64 userId=8; //房东id
+  int64 rowState=9; //0:下架，1：上架
+  int64 rowType=10; //售卖类型：0：按房间预定，1：按人数预定
+  string foodInfo=11; //餐食标准
+  int64 foodPrice=12; //餐食价格（份）
+  int64 homestayPrice=13; //民宿价格
+  int64 marketHomestayPrice=14; //民宿市场价格
+}
+message HomestayDetailReq {
+  int64 id = 1;
+}
+
+message HomestayDetailResp {
+  Homestay homestay= 1;
+}
+
+service travel {
+  rpc homestayDetail(HomestayDetailReq) returns (HomestayDetailResp);
+}

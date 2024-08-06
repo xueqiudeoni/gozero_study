@@ -1,0 +1,15 @@
+Name: usercenter.rpc
+ListenOn: 0.0.0.0:8080
+Etcd:
+  Hosts:
+  - 47.109.82.199:2379
+  Key: usercenter.rpc
+JwtAuth:
+  AccessSecret: ae0536f9-6450-4606-8e13-5a19ed505da0
+  AccessExpire: 31536000
+DB:
+  DataSource: root:FqVR5j8j@tcp(8.139.112.9:3306)/go-homestay?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+CacheRedis:
+  - Host: 47.109.82.199:6379
+    Type: node
+    Pass: ""
